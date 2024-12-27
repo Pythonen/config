@@ -1,0 +1,21 @@
+[cursor.style]
+blinking = "On"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Monaco for Powerline"
+
+[font.normal]
+family = "Monaco for Powerline"
+
+[window]
+decorations = "transparent"
+dynamic_padding = false
+opacity = 0.95
+startup_mode = "Windowed"
+
+[window.padding]
+x = 5
+y = 25
