@@ -1,0 +1,112 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+[
+  // Basic keymaps
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": ["workspace::SendKeystrokes", "escape"]
+      // Word wrap movement (gk/gj equivalents in Zed)
+      // Center cursor after search
+    }
+  },
+
+  // Harpoon-like functionality (simplified - Zed doesn't have direct Harpoon equivalent)
+  {
+    "context": "Workspace && vim_mode != insert",
+    "bindings": {
+      // "space t e": "terminal_panel::ToggleFocus",
+      "cmd-j": "workspace::ToggleRightDock"
+      // "space a": "vim::PushMark"
+      // "ctrl-q": "bookmarks::ShowBookmarks", // Toggle bookmark menu
+      // "shift-q": ["", 1],
+      // "shift-w": ["bookmarks::JumpTo", 2],
+      // "shift-e": ["bookmarks::JumpTo", 3],
+      // "shift-r": ["bookmarks::JumpTo", 4],
+      // "shift-t": ["bookmarks::JumpTo", 5]
+    }
+  },
+
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal"
+    }
+  },
+
+  // Clipboard operations
+  {
+    "context": "Editor && vim_mode == normal && !Terminal",
+    "bindings": {
+      // System clipboard yank
+      "space y": "editor::Copy",
+      "L": "pane::ActivateNextItem",
+      "H": "pane::ActivatePreviousItem",
+      "space r n": "editor::Rename"
+      // Delete without affecting register
+    }
+  },
+  // File explorer and Telescope-like bindings
+  {
+    "context": "Editor && vim_mode == normal && !Terminal",
+    "bindings": {
+      "ctrl-p": "file_finder::Toggle",
+      "space /": "outline::Toggle",
+      "space t t": "diagnostics::Deploy",
+      "space c a": "editor::ToggleCodeActions",
+      "-": "pane::GoBack",
+      "space s g": "pane::DeploySearch",
+      "space g r": "editor::FindAllReferences"
+      // "cmd-j": "workspace::ToggleRightDock",
+    }
+  },
+
+  // Window splitting and navigation (smart-splits equivalents)
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-a l": "vim::ResizePaneRight",
+      "ctrl-a h": "vim::ResizePaneLeft",
+      "ctrl-a k": "vim::ResizePaneUp",
+      "ctrl-a j": "vim::ResizePaneDown"
+      // "ctrl-h": "pane",
+      // "ctrl-j": "pane::GoDown",
+      // "ctrl-k": "pane::GoUp",
+      // "ctrl-l": "pane::GoRight",
+      // "ctrl-\\": "pane::GoToPrevious",
+      // "cmd-cmd-h": "pane::SwapLeft",
+      // "cmd-cmd-j": "pane::SwapDown",
+      // "cmd-cmd-k": "pane::SwapUp",
+      // "cmd-cmd-l": "pane::SwapRight"
+    }
+  },
+  // Visual mode line movement
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "J": "editor::MoveLineDown",
+      "K": "editor::MoveLineUp"
+    }
+  }
+
+  // Quickfix navigation
+  // {
+  //   "context": "Editor",
+  //   "bindings": {
+  //     "shift-j": ["quickfix::Next", "editor::ScrollCenter"],
+  //     "shift-k": ["quickfix::Previous", "editor::ScrollCenter"]
+  //   }
+  // }
+
+  // Diagnostics (Trouble equivalent)
+  // {
+  //   "context": "Editor",
+  //   "bindings": {
+  //     "cmd-e": "diagnostics::ShowAtCursor"
+  //   }
+  // }
+]
+
