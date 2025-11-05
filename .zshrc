@@ -101,6 +101,7 @@ alias gap="ga --patch"
 alias vmrss="~/vmrss.sh"
 alias python="python3"
 alias ts="~/dev/config/tmux-sessionizer.sh"
+alias gcof="git branch | rg -v '^\*' | fzf --height=20% --reverse --info=inline | xargs git checkout"
 export EDITOR='vim'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
