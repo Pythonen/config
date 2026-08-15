@@ -1,0 +1,53 @@
+# Mirrors ~/.tmux.conf as closely as herdr allows.
+
+[keys]
+# set-option -g prefix C-a
+prefix = "ctrl+a"
+
+# bind | split-window -h  (side-by-side panes)
+split_vertical = "prefix+|"
+
+# bind - split-window -v  (stacked panes) — matches herdr's default
+split_horizontal = "prefix+minus"
+
+# bind -n C-h/C-j/C-k/C-l select-pane (direct pane navigation)
+focus_pane_left = "ctrl+h"
+focus_pane_down = "ctrl+j"
+focus_pane_up = "ctrl+k"
+focus_pane_right = "ctrl+l"
+
+# bind -r h/j/k/l resize-pane — emulated with the socket CLI via custom
+# commands (herdr has no native resize keybindings). The amount is a ratio
+# of the split, not cells: 0.03 ≈ 5 columns on a 160-column terminal.
+resize_mode = "prefix+r"
+
+# bind -n C-\ select-pane -l (previously focused pane)
+last_pane = "ctrl+backslash"
+
+[[keys.command]]
+key = "prefix+h"
+type = "shell"
+command = "herdr pane resize --direction left --amount 0.03 --current"
+description = "resize pane left"
+
+[[keys.command]]
+key = "prefix+j"
+type = "shell"
+command = "herdr pane resize --direction down --amount 0.03 --current"
+description = "resize pane down"
+
+[[keys.command]]
+key = "prefix+k"
+type = "shell"
+command = "herdr pane resize --direction up --amount 0.03 --current"
+description = "resize pane up"
+
+[[keys.command]]
+key = "prefix+l"
+type = "shell"
+command = "herdr pane resize --direction right --amount 0.03 --current"
+description = "resize pane right"
+
+[ui]
+# set -g mouse on — herdr captures mouse by default; keep it on.
+mouse_capture = true
