@@ -45,7 +45,7 @@
 # Ghostty configuration
 
 # Font
-font-family = "Monaco"
+#font-family = "Monaco"
 font-size = 13
 
 # Window

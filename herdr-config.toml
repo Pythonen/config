@@ -1,3 +1,4 @@
+onboarding = false
 # Mirrors ~/.tmux.conf as closely as herdr allows.
 
 [keys]
@@ -24,6 +25,20 @@ resize_mode = "prefix+r"
 # bind -n C-\ select-pane -l (previously focused pane)
 last_pane = "ctrl+backslash"
 
+# Navigate-mode (prefix+g) movement. hjkl moves between panes (default);
+# shift+k/shift+j move up/down the workspace list without clashing with j/k.
+# Arrow keys keep working regardless.
+navigate_pane_left = "h"
+navigate_pane_down = "j"
+navigate_pane_up = "k"
+navigate_pane_right = "l"
+navigate_workspace_up = "shift+k"
+navigate_workspace_down = "shift+j"
+
+# bind ( switch-client -p  /  bind ) switch-client -n — mapped to workspace cycling
+previous_workspace = "prefix+("
+next_workspace = "prefix+)"
+
 [[keys.command]]
 key = "prefix+h"
 type = "shell"
@@ -48,6 +63,25 @@ type = "shell"
 command = "herdr pane resize --direction right --amount 0.03 --current"
 description = "resize pane right"
 
+[[keys.command]]
+key = "prefix+t"
+type = "popup"
+command = "exec \"${SHELL:-sh}\""
+description = "open scratch terminal"
+width = "80%"
+height = "80%"
+
+[[keys.command]]
+key = "cmd+r"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"   # <plugin_id>.<action_id> — note the id, not the name
+
 [ui]
 # set -g mouse on — herdr captures mouse by default; keep it on.
 mouse_capture = true
+tab_bar_position = "bottom"
+
+show_agent_labels_on_pane_borders = false
+[theme]
+name = "gruvbox"
+auto_switch = false
