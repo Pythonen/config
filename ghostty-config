@@ -45,7 +45,7 @@
 # Ghostty configuration
 
 # Font
-#font-family = "Monaco"
+# font-family = "Monaco"
 font-size = 13
 
 # Window
@@ -59,3 +59,6 @@ macos-option-as-alt = true
 # Other settings
 adjust-cell-height = 0
 theme = Gruvbox Dark
+
+keybind = global:option+space=toggle_quick_terminal
+quick-terminal-animation-duration = 0.1

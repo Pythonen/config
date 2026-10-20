@@ -7,11 +7,86 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_line_height": "standard",
+  "buffer_font_weight": 400.0,
+  "ui_font_family": ".SystemUIFont",
+  "buffer_font_family": "JetBrains Mono",
+  "diff_view_style": "unified",
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "agent": {
+    "expand_edit_card": false,
+    "expand_terminal_card": false,
+    "play_sound_when_agent_done": "when_hidden",
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-fable-5",
+      "enable_thinking": true,
+      "effort": "high"
+    },
+    "dock": "right",
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "claude-fable-5",
+        "enable_thinking": true,
+        "effort": "high"
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5.5",
+        "enable_thinking": true,
+        "effort": "high"
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5.6-sol",
+        "enable_thinking": true,
+        "effort": "high"
+      }
+    ],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "edit_predictions": {
+    "allow_data_collection": "no",
+    "provider": "copilot",
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_text_threads": false
+  },
   "vim_mode": true,
-  "ui_font_size": 14,
-  "buffer_font_size": 13,
+  "ui_font_size": 14.0,
+  "buffer_font_size": 13.0,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Gruvbox Light",
     "dark": "Gruvbox Dark"
   },
@@ -23,6 +98,8 @@
     "show": false
   },
   "terminal": {
+    "font_family": "FiraCode Nerd Font",
+    "font_size": 13.0,
     "dock": "right"
   },
   "languages": {
@@ -46,4 +123,3 @@
     }
   }
 }
-

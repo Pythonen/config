@@ -1,5 +1,6 @@
 onboarding = false
 # Mirrors ~/.tmux.conf as closely as herdr allows.
+#
 
 [keys]
 # set-option -g prefix C-a
@@ -39,6 +40,12 @@ navigate_workspace_down = "shift+j"
 previous_workspace = "prefix+("
 next_workspace = "prefix+)"
 
+# Native worktree teardown (built-in confirmation dialog).
+# prefix+shift+x was close_tab by default; close_tab moves to prefix+&
+# to mirror tmux kill-window.
+remove_worktree = "prefix+shift+x"
+close_tab = "prefix+ampersand"
+
 [[keys.command]]
 key = "prefix+h"
 type = "shell"
@@ -73,8 +80,11 @@ height = "80%"
 
 [[keys.command]]
 key = "cmd+r"
-type = "plugin_action"
-command = "persiyanov.reviewr.toggle"   # <plugin_id>.<action_id> — note the id, not the name
+type = "popup"
+command = "hunk diff --watch"
+description = "open hunk diff watcher"
+width = "80%"
+height = "80%"
 
 [ui]
 # set -g mouse on — herdr captures mouse by default; keep it on.

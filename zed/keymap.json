@@ -8,7 +8,8 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j k": ["workspace::SendKeystrokes", "escape"]
+      "j k": ["workspace::SendKeystrokes", "escape"],
+      "alt-a": "editor::AcceptEditPrediction"
       // Word wrap movement (gk/gj equivalents in Zed)
       // Center cursor after search
     }
@@ -20,13 +21,6 @@
     "bindings": {
       // "space t e": "terminal_panel::ToggleFocus",
       "cmd-j": "workspace::ToggleRightDock"
-      // "space a": "vim::PushMark"
-      // "ctrl-q": "bookmarks::ShowBookmarks", // Toggle bookmark menu
-      // "shift-q": ["", 1],
-      // "shift-w": ["bookmarks::JumpTo", 2],
-      // "shift-e": ["bookmarks::JumpTo", 3],
-      // "shift-r": ["bookmarks::JumpTo", 4],
-      // "shift-t": ["bookmarks::JumpTo", 5]
     }
   },
 
@@ -55,11 +49,13 @@
     "bindings": {
       "ctrl-p": "file_finder::Toggle",
       "space /": "outline::Toggle",
+      "space w /": "project_symbols::Toggle",
       "space t t": "diagnostics::Deploy",
       "space c a": "editor::ToggleCodeActions",
       "-": "pane::GoBack",
       "space s g": "pane::DeploySearch",
-      "space g r": "editor::FindAllReferences"
+      "space g r": "editor::FindAllReferences",
+      "ctrl-q": "vim::ToggleMarksView"
       // "cmd-j": "workspace::ToggleRightDock",
     }
   },
@@ -109,4 +105,3 @@
   //   }
   // }
 ]
-
